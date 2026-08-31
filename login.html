@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Access | stackly Corporate Bank</title>
+  <meta name="description" content="Access your Admin or Client dashboard to manage corporate accounts, transactions, and trade financing.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .alert-box {
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      display: none;
+      font-weight: 600;
+    }
+    .alert-error {
+      background-color: rgba(239, 68, 68, 0.15);
+      border: 1px solid var(--accent-red);
+      color: #ff8b8b;
+    }
+    .alert-success {
+      background-color: rgba(16, 185, 129, 0.15);
+      border: 1px solid var(--accent);
+      color: #a7f3d0;
+    }
+  </style>
+</head>
+<body style="background-color: var(--bg-primary);">
+
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <img src="assets/logo.webp" alt="Apex Bank Logo" class="preloader-logo">
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+
+  <div class="auth-wrapper">
+    <div class="auth-container">
+      
+      <div class="auth-logo">
+        <a href="index.html" class="logo" style="display:inline-flex;">
+          <img src="assets/logo.webp" alt="Apex Bank Logo" class="logo-img">
+        </a>
+      </div>
+
+      <div class="card auth-card glass">
+        <h2 class="auth-title">System Portal Access</h2>
+        <p class="auth-subtitle">Select profile role to access secure ledger areas.</p>
+
+        <!-- Message Alerts container -->
+        <div id="alert-container" class="alert-box"></div>
+
+        <form id="login-form">
+          <!-- Role selector toggle -->
+          <div class="role-selector">
+            <label class="role-option">
+              <input type="radio" name="role" value="client" checked>
+              <div class="role-box">CLIENT</div>
+            </label>
+            <label class="role-option">
+              <input type="radio" name="role" value="admin">
+              <div class="role-box">ADMIN</div>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="login-email">Authorized Email ID</label>
+            <input type="email" id="login-email" class="form-control" placeholder="business@company.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="login-password">Portal Key Password</label>
+            <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:16px;">Authenticate Portal</button>
+        </form>
+
+        <div style="text-align:center; font-size:0.85rem; color:var(--text-muted); margin-top:20px; border-top:1px solid var(--glass-border); padding-top:16px;">
+          <strong>Demo credentials for testing:</strong><br>
+          Admin: <code>admin@apex.com</code> / <code>adminpassword</code><br>
+          Client: <code>client@company.com</code> / <code>clientpassword</code>
+        </div>
+
+        <div class="auth-footer" style="margin-top:24px; display:flex; flex-direction:column; gap:16px;">
+          <div>New corporate entity? <a href="signup.html">Register Profile</a></div>
+          <a href="index.html" class="btn btn-secondary" style="width:100%; padding:10px 0; border-radius: var(--radius-sm); font-size: 0.9rem;">← Back to Home</a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <!-- Preloader Script -->
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+          preloader.classList.add('fade-out');
+        }
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

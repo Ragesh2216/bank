@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Restricted | Apex Corporate Bank</title>
+  <meta name="description" content="Secure connection error. The requested resource has been restricted or relocated.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <img src="assets/logo.webp" alt="Apex Bank Logo" class="preloader-logo">
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: 404 Message Block -->
+  <section class="section" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, var(--secondary-glow) 0%, transparent 70%);">
+    <div class="container" style="max-width: 600px; text-align: center;">
+      <div class="card glass" style="padding: 48px; border-radius: var(--radius-lg);">
+        <div style="font-size: 5rem; font-weight: 800; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px;">404</div>
+        <h2 style="font-size: 1.8rem; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em;">Ledger Entry Restricted</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6;">The security compliance desk could not verify your connection signature for the requested path. This system zone may be restricted, archived, or temporarily down for audit review.</p>
+        <div style="display: flex; gap: 16px; margin-top: 24px;">
+          <a href="javascript:history.back()" class="btn btn-secondary" style="flex: 1; padding: 12px 0; border-radius: var(--radius-sm); font-size: 0.9rem;">← Go Back</a>
+          <a href="index.html" class="btn btn-primary" style="flex: 1; padding: 12px 0; border-radius: var(--radius-sm); font-size: 0.9rem;">Home Terminal</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+  <!-- Preloader Script -->
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+          preloader.classList.add('fade-out');
+        }
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

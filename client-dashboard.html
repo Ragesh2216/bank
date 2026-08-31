@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Portal | Apex Corporate Bank</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <img src="assets/logo.webp" alt="Apex Bank Logo" class="preloader-logo">
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+
+  <div class="dash-wrapper">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <a href="index.html" class="logo" style="justify-content: center; width: 100%;">
+          <img src="assets/logo.webp" alt="Apex Bank Logo" class="logo-img" style="width: 40px; height: 40px;">
+        </a>
+      </div>
+      
+      <ul class="sidebar-menu">
+        <li>
+          <div class="sidebar-link active" data-section="client-overview">
+            <span class="sidebar-link-icon">📊</span> Overview
+          </div>
+        </li>
+        <li>
+          <div class="sidebar-link" data-section="client-transfer">
+            <span class="sidebar-link-icon">💸</span> Wire Transfer
+          </div>
+        </li>
+        <li>
+          <div class="sidebar-link" data-section="client-settings">
+            <span class="sidebar-link-icon">⚙️</span> Settings
+          </div>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-link logout-trigger" style="color: var(--accent-red);">
+          <span class="sidebar-link-icon">🚪</span> Logout
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- HEADER BAR -->
+      <header class="dash-header">
+        <div style="display:flex; align-items:center; gap:16px;">
+          <div class="dash-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="dash-title-section">
+            <h1 id="dash-heading">Client Portal</h1>
+          </div>
+        </div>
+        
+        <div class="user-profile-section">
+          <span class="user-badge user-company-display">Corporate Client</span>
+          <span class="user-email" style="font-size:0.9rem; color:var(--primary);">client@company.com</span>
+        </div>
+      </header>
+
+      <!-- BODY SECTIONS -->
+      <div class="dash-body">
+        
+        <!-- SECTION 1: OVERVIEW -->
+        <div class="dash-section active" id="client-overview">
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-info">
+                <h3>Checking Balance</h3>
+                <div class="metric-value" id="balance-checking">$12,450,800.00</div>
+                <div class="metric-trend up">✓ Account Active</div>
+              </div>
+              <div class="metric-icon">💵</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-info">
+                <h3>Savings Balance</h3>
+                <div class="metric-value">$45,120,500.00</div>
+                <div class="metric-trend up">▲ 4.10% Tiered Yield</div>
+              </div>
+              <div class="metric-icon">📈</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-info">
+                <h3>Active Line of Credit</h3>
+                <div class="metric-value">$5,000,000</div>
+                <div class="metric-trend" style="color:var(--text-secondary);">Available Pool</div>
+              </div>
+              <div class="metric-icon">💳</div>
+            </div>
+          </div>
+
+          <!-- RECENT TRANSACTIONS TABLE -->
+          <div class="table-container">
+            <div class="table-header">
+              <h2>Recent Wire Activity</h2>
+              <span style="font-size:0.85rem; color:var(--text-secondary);">Real-time transaction status logs</span>
+            </div>
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Date Logged</th>
+                  <th>Counterparty</th>
+                  <th>Memo/Reference</th>
+                  <th>Type</th>
+                  <th>Compliance Status</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody id="transaction-roster-body">
+                <!-- Filled dynamically by wire simulator or defaults -->
+                <tr>
+                  <td>Aug 28, 2026</td>
+                  <td>Aero Systems Global - Acct *8902</td>
+                  <td>Invoice payment</td>
+                  <td>Outflow</td>
+                  <td class="status-badge-container"><span class="status-badge success">Cleared</span></td>
+                  <td style="font-weight:700; color:var(--accent-red)">-$1,200,000.00</td>
+                </tr>
+                <tr>
+                  <td>Aug 24, 2026</td>
+                  <td>Apex Liquidity Pool</td>
+                  <td>Sweep Interest payout</td>
+                  <td>Inflow</td>
+                  <td class="status-badge-container"><span class="status-badge success">Cleared</span></td>
+                  <td style="font-weight:700; color:var(--accent)">+$4,820.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SECTION 2: WIRE TRANSFER FORM -->
+        <div class="dash-section" id="client-transfer">
+          <div class="card glass" style="max-width: 600px; margin: 0 auto;">
+            <h2 style="margin-bottom: 24px; color: var(--primary);">Initiate Corporate Wire Transfer</h2>
+            <form id="transfer-form">
+              <div class="form-group">
+                <label for="transfer-bank">Recipient Bank Name</label>
+                <input type="text" id="transfer-bank" class="form-control" placeholder="E.g. Chase Bank" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="transfer-routing">ABA Routing Transit Number</label>
+                  <input type="text" id="transfer-routing" class="form-control" placeholder="9-Digit Routing Number" required>
+                </div>
+                <div class="form-group">
+                  <label for="transfer-account">Recipient Account Number</label>
+                  <input type="text" id="transfer-account" class="form-control" placeholder="Account Number" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="transfer-amount">Transfer Amount (USD)</label>
+                <input type="number" id="transfer-amount" class="form-control" placeholder="$0.00" min="1" step="any" required>
+              </div>
+              <div class="form-group">
+                <label for="transfer-memo">Wire Memo / Reference</label>
+                <input type="text" id="transfer-memo" class="form-control" placeholder="E.g. Supplier Invoice #889" required>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 16px;">Initiate Wire Transaction</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- SECTION 3: SETTINGS -->
+        <div class="dash-section" id="client-settings">
+          <div class="card glass" style="max-width: 600px; margin: 0 auto;">
+            <h2 style="margin-bottom: 24px;">Client Account Configuration</h2>
+            <form onsubmit="event.preventDefault(); alert('Profile preferences updated.');">
+              <div class="form-group">
+                <label>Registered Legal Representative</label>
+                <input type="text" class="form-control user-name-display" value="Corporate CFO" readonly>
+              </div>
+              <div class="form-group">
+                <label>Corporate Registry ID</label>
+                <input type="text" class="form-control" value="SEC-ID-883491-APX" readonly>
+              </div>
+              <div class="form-group">
+                <label>Daily Wire Risk Alert Ceiling</label>
+                <select class="form-control" style="background-color: var(--bg-tertiary);">
+                  <option>$500,000 USD (Recommend)</option>
+                  <option>$1,000,000 USD</option>
+                  <option>$5,000,000 USD</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary" style="margin-top:10px;">Save Profile Rules</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="main.js"></script>
+  <!-- Preloader Script -->
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+          preloader.classList.add('fade-out');
+        }
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

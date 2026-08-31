@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>stackly Corporate Bank | Institutional Financial Solutions</title>
+  <meta name="description" content="Experience high-fidelity treasury management, trade finance, and corporate banking solutions designed for multinational corporations.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <img src="assets/logo.webp" alt="Apex Bank Logo" class="preloader-logo">
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: Header / Sticky Navigation -->
+  <header class="header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.webp" alt="Apex Bank Logo" class="logo-img">
+      </a>
+      
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html" class="mobile-client-portal">Client Portal</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-secondary" style="padding: 8px 16px; border-radius: var(--radius-sm);">Client Portal</a>
+        <div class="menu-toggle" id="mobile-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 2: Hero Showcase -->
+  <section class="hero" id="home-hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1 class="gradient-text">Empowering Institutional Growth Worldwide</h1>
+        <p>Leading multinational corporations trust Apex Bank's unified digital platform for treasury, global market trade financing, and multi-currency liquidity management.</p>
+        <div class="hero-actions">
+          <a href="404.html" class="btn btn-primary">Establish Account</a>
+          <a href="404.html" class="btn btn-secondary">Request Consultation</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="assets/images/hero_banking.webp" alt="Futuristic banking interface and skyscrapers" width="600" height="337">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Financial Analytics Stats -->
+  <section class="section section-dark" id="home-stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">$140B+</div>
+          <div class="stat-label">Assets Administered</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">180+</div>
+          <div class="stat-label">Global Corresondent Banks</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Treasury Desk Coverage</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">99.99%</div>
+          <div class="stat-label">API Core Uptime</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Core Corporate Banking Solutions -->
+  <section class="section" id="home-services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Institutional Corporate Services</h2>
+        <p>A unified suite of treasury, credit line, and global capital market services built on next-gen security infrastructures.</p>
+      </div>
+      <div class="services-grid">
+        <div class="card service-card">
+          <div class="service-card-icon">⚡</div>
+          <h3>Treasury Management</h3>
+          <p>Optimize working capital, manage global liquidity pools, and handle cash collection processes dynamically.</p>
+        </div>
+        <div class="card service-card">
+          <div class="service-card-icon">🌐</div>
+          <h3>Trade Finance</h3>
+          <p>Accelerate international import-export flows with smart Letters of Credit and supply chain credit facilities.</p>
+        </div>
+        <div class="card service-card">
+          <div class="service-card-icon">💎</div>
+          <h3>Capital Markets</h3>
+          <p>Expert advising on corporate debt issuance, portfolio optimization, and currency risk hedging models.</p>
+        </div>
+        <div class="card service-card">
+          <div class="service-card-icon">🔒</div>
+          <h3>Corporate Lending</h3>
+          <p>Flexible revolving lines of credit, syndication loans, and infrastructure project funding pools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Savings Yield Calculator Widget -->
+  <section class="section section-dark" id="home-calc">
+    <div class="container">
+      <div class="section-header">
+        <h2>Treasury Yield Calculator</h2>
+        <p>Estimate the growth of your company's short-term operating cash reserves using Apex Bank's tiered yield rates.</p>
+      </div>
+      <div class="card calc-card glass">
+        <div class="calc-group">
+          <label for="calc-amount">Investment Amount (USD)</label>
+          <input type="range" id="calc-amount" class="calc-slider" min="100000" max="10000000" step="50000" value="1000000">
+          <div class="calc-input-row">
+            <span class="calc-val-box" id="val-amount">$1,000,000</span>
+            <span style="font-size:0.85rem; color:var(--text-muted)">Min: $100k / Max: $10M</span>
+          </div>
+        </div>
+        
+        <div class="calc-group">
+          <label for="calc-term">Holding Duration</label>
+          <input type="range" id="calc-term" class="calc-slider" min="3" max="36" step="3" value="12">
+          <div class="calc-input-row">
+            <span class="calc-val-box" id="val-term">12 Months</span>
+            <span style="font-size:0.85rem; color:var(--text-muted)">Min: 3m / Max: 36m</span>
+          </div>
+        </div>
+
+        <div class="calc-results">
+          <div>
+            <div class="calc-res-title">Tiered Interest Rate</div>
+            <div class="calc-res-value" id="res-rate">4.10%</div>
+          </div>
+          <div>
+            <div class="calc-res-title">Estimated Earnings</div>
+            <div class="calc-res-value" id="res-interest">$41,000.00</div>
+          </div>
+          <div style="grid-column: span 2; border-top: 1px solid var(--glass-border); padding-top: 16px; margin-top: 16px;">
+            <div class="calc-res-title">Total Portfolio Valuation</div>
+            <div class="calc-res-value" id="res-total" style="color:var(--primary); font-size:1.8rem;">$1,041,000.00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: Stock & Forex Live Ticker -->
+  <section class="section" id="home-ticker" style="padding: 40px 0; background-color: #040813; border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);">
+    <div class="container" style="overflow: hidden; white-space: nowrap; position: relative;">
+      <div style="display: inline-block; animation: scroll-ticker 30s linear infinite; font-weight: 600; font-size: 0.95rem; color: var(--text-secondary);">
+        <span style="margin-right: 50px;">💵 USD / EUR: <strong style="color: var(--accent);">0.9142 (+0.12%)</strong></span>
+        <span style="margin-right: 50px;">💷 GBP / USD: <strong style="color: var(--accent-red);">1.2785 (-0.08%)</strong></span>
+        <span style="margin-right: 50px;">🇯🇵 USD / JPY: <strong style="color: var(--accent);">144.92 (+0.24%)</strong></span>
+        <span style="margin-right: 50px;">📈 APX INTL Index: <strong style="color: var(--accent);">4,289.15 (+1.48%)</strong></span>
+        <span style="margin-right: 50px;">🥇 Gold (Oz): <strong style="color: var(--accent-red);">$2,024.50 (-0.35%)</strong></span>
+        <span style="margin-right: 50px;">🛢️ Brent Crude: <strong style="color: var(--accent);">$82.14 (+1.04%)</strong></span>
+        <span style="margin-right: 50px;">💵 USD / EUR: <strong style="color: var(--accent);">0.9142 (+0.12%)</strong></span>
+        <span style="margin-right: 50px;">💷 GBP / USD: <strong style="color: var(--accent-red);">1.2785 (-0.08%)</strong></span>
+      </div>
+    </div>
+  </section>
+  <style>
+    @keyframes scroll-ticker {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+  </style>
+
+  <!-- SECTION 7: Institutional Strength & Stability -->
+  <section class="section" id="home-about">
+    <div class="container hero-grid">
+      <div class="hero-image-wrapper">
+        <img src="assets/images/office_hq.webp" alt="Corporate Headquarters lobby" width="600" height="337" style="transform: scaleX(-1);">
+      </div>
+      <div class="hero-content">
+        <h2>Institutional Strength, Unmatched Stability</h2>
+        <p style="margin-bottom: 24px; margin-top: 20px; color: var(--text-secondary);">With nearly a century of managing capital flows for multi-billion dollar firms, Apex Bank blends financial history with modern online accessibility tools.</p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px;">
+          <li style="display:flex; align-items:center; gap:12px; color:var(--text-secondary);"><span style="color:var(--primary); font-weight:800;">✓</span> Basel III Liquidity ratio maintained above 140%.</li>
+          <li style="display:flex; align-items:center; gap:12px; color:var(--text-secondary);"><span style="color:var(--primary); font-weight:800;">✓</span> Risk oversight committees operating in major regional zones.</li>
+          <li style="display:flex; align-items:center; gap:12px; color:var(--text-secondary);"><span style="color:var(--primary); font-weight:800;">✓</span> Fully redundant local servers protecting operational ledger items.</li>
+        </ul>
+        <a href="404.html" class="btn btn-secondary">Our Leadership Legacy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: Security & Compliance -->
+  <section class="section section-dark" id="home-security">
+    <div class="container">
+      <div class="section-header">
+        <h2>Fortified Financial Security</h2>
+        <p>Enterprise data is secured with AES-256 military-grade encryption keys, active transaction pattern screening, and strict access protocols.</p>
+      </div>
+      <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <div class="card glass">
+          <h3 style="margin-bottom: 12px; display:flex; align-items:center; gap:8px;"><span style="color:var(--primary)">🔒</span> Multi-Factor Core Verification</h3>
+          <p style="color:var(--text-secondary)">Safeguard access tokens with hardware cryptographic keys, biometric logins, and multi-sign approval loops for wire transfers.</p>
+        </div>
+        <div class="card glass">
+          <h3 style="margin-bottom: 12px; display:flex; align-items:center; gap:8px;"><span style="color:var(--primary)">🤖</span> AI-Powered Fraud Defense</h3>
+          <p style="color:var(--text-secondary)">Dynamic machine learning analysis guards corporate account flows, isolating suspicious transaction activity triggers instantly.</p>
+        </div>
+        <div class="card glass">
+          <h3 style="margin-bottom: 12px; display:flex; align-items:center; gap:8px;"><span style="color:var(--primary)">📊</span> Compliance & Auditing Control</h3>
+          <p style="color:var(--text-secondary)">Seamless system access tracking, custom role scopes, and comprehensive audit files matching global reporting standard frameworks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: Global Corporate Partners -->
+  <section class="section" id="home-partners" style="padding: 60px 0;">
+    <div class="container">
+      <h3 style="text-align: center; color: var(--text-muted); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 40px;">Trusted by Global Market Industry Leaders</h3>
+      <div class="partner-grid">
+        <div class="partner-logo">NEXUS CORP</div>
+        <div class="partner-logo">AERO SYSTEMS</div>
+        <div class="partner-logo">VORTEX LABS</div>
+        <div class="partner-logo">LUMINA GRUP</div>
+        <div class="partner-logo">GLOBAL SHIPPING</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: Client Testimonials -->
+  <section class="section section-dark" id="home-testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>Institutional Client Case Studies</h2>
+        <p>Read how leading chief financial officers coordinate corporate funding flows using Apex's integrated digital stack.</p>
+      </div>
+      <div class="services-grid">
+        <div class="card">
+          <p style="font-style: italic; color:var(--text-secondary); margin-bottom: 24px;">"Integrating Apex's liquidity sweep mechanisms reduced our global transactional friction by 40%, generating substantial operational interest yield on dormant accounts."</p>
+          <h4 style="color: var(--primary);">Marcus Vance</h4>
+          <span style="font-size:0.85rem; color:var(--text-muted)">Chief Financial Officer, Nexus Logistics</span>
+        </div>
+        <div class="card">
+          <p style="font-style: italic; color:var(--text-secondary); margin-bottom: 24px;">"The multi-sign wire desk feature has streamlined our capital acquisition flows. We can authorize cross-border payments of $10M+ in seconds with full security peace of mind."</p>
+          <h4 style="color: var(--primary);">Elena Rostova</h4>
+          <span style="font-size:0.85rem; color:var(--text-muted)">Treasurer Director, Aero Systems Global</span>
+        </div>
+        <div class="card">
+          <p style="font-style: italic; color:var(--text-secondary); margin-bottom: 24px;">"Apex's customized developer API suite plugged directly into our internal SAP module, allowing fully automated bank statement reconciliation within seconds."</p>
+          <h4 style="color: var(--primary);">Hiroshi Tanaka</h4>
+          <span style="font-size:0.85rem; color:var(--text-muted)">VP of Finance, Vortex Holdings</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11: Corporate FAQ Accordion -->
+  <section class="section" id="home-faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Common inquiries regarding onboarding, transaction limits, security standard rules, and corporate support.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item card glass">
+          <div class="faq-question">
+            <span>How long does the institutional onboarding process take?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Our standard corporate onboarding cycle takes 2-4 business days. This includes entity checks, regulatory compliance review, and sandbox access to setup payment API links.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item card glass">
+          <div class="faq-question">
+            <span>What are the maximum transaction limits for cross-border wires?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Apex Corporate accounts do not carry rigid transactional ceilings. Transactions exceeding $15,000,000 USD only require primary compliance approval desk verification through the Client Portal dashboard.</p>
+          </div>
+        </div>
+
+        <div class="faq-item card glass">
+          <div class="faq-question">
+            <span>Does Apex Bank support direct ERP software integration?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes. We offer pre-built developer webhook frameworks and REST APIs supporting SAP, Oracle NetSuite, Microsoft Dynamics, and custom software systems.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 12: Detailed Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="margin-bottom: 20px; display: inline-flex;">
+          <img src="assets/logo.webp" alt="Apex Bank Logo" class="logo-img">
+        </a>
+        <p class="footer-desc">Institutional financial services and treasury platform built for global scale businesses.</p>
+        <div class="social-links">
+          <a href="404.html" class="social-icon">Li</a>
+          <a href="404.html" class="social-icon">Tw</a>
+          <a href="404.html" class="social-icon">Yt</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="404.html">Treasury Services</a></li>
+          <li><a href="404.html">Trade Financing</a></li>
+          <li><a href="404.html">Credit Lines</a></li>
+          <li><a href="404.html">Asset Portfolios</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Institution</h4>
+        <ul>
+          <li><a href="about.html">About </a></li>
+          <li><a href="services.html">services</a></li>
+          <li><a href="blog.html">blog</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Corporate Head Office</h4>
+        <p style="color:var(--text-primary); margin-bottom: 8px;">Apex Plaza Central</p>
+        <p>12 Wall Street, Floor 44<br>New York, NY 10005</p>
+        <p style="color:var(--text-primary); margin-top: 16px; margin-bottom: 8px;">Stackly Salem Office</p>
+        <p>456 Cherry Road, Salem<br>Tamil Nadu, India - 636007</p>
+        <p style="margin-top: 12px;">Email: onboarding@apexcorporate.com</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Apex Corporate Banking Group. All rights reserved.</p>
+      <p>Member FDIC | Equal Housing Lender | Regulatory Authority Entity 1883-APX</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <!-- Preloader Script -->
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+          preloader.classList.add('fade-out');
+        }
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

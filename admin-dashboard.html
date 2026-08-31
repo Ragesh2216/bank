@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal | Apex Corporate Bank</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <img src="assets/logo.webp" alt="Apex Bank Logo" class="preloader-logo">
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+
+  <div class="dash-wrapper">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <a href="index.html" class="logo" style="justify-content: center; width: 100%;">
+          <img src="assets/logo.webp" alt="Apex Bank Logo" class="logo-img" style="width: 40px; height: 40px;">
+        </a>
+      </div>
+      
+      <ul class="sidebar-menu">
+        <li>
+          <div class="sidebar-link active" data-section="admin-overview">
+            <span class="sidebar-link-icon">📊</span> Overview
+          </div>
+        </li>
+        <li>
+          <div class="sidebar-link" data-section="admin-approvals">
+            <span class="sidebar-link-icon">⚖️</span> Compliance Desk
+          </div>
+        </li>
+        <li>
+          <div class="sidebar-link" data-section="admin-roster">
+            <span class="sidebar-link-icon">👥</span> Client Roster
+          </div>
+        </li>
+        <li>
+          <div class="sidebar-link" data-section="admin-audits">
+            <span class="sidebar-link-icon">📜</span> System Audits
+          </div>
+        </li>
+        <li>
+          <div class="sidebar-link" data-section="admin-settings">
+            <span class="sidebar-link-icon">⚙️</span> Settings
+          </div>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-link logout-trigger" style="color: var(--accent-red);">
+          <span class="sidebar-link-icon">🚪</span> Logout
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- HEADER BAR -->
+      <header class="dash-header">
+        <div style="display:flex; align-items:center; gap:16px;">
+          <div class="dash-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="dash-title-section">
+            <h1 id="dash-heading">Admin Portal</h1>
+          </div>
+        </div>
+        
+        <div class="user-profile-section">
+          <span class="user-badge">Compliance Admin</span>
+          <span class="user-email" style="font-size:0.9rem; color:var(--primary);">admin@apex.com</span>
+        </div>
+      </header>
+
+      <!-- BODY SECTIONS -->
+      <div class="dash-body">
+        
+        <!-- SECTION 1: OVERVIEW -->
+        <div class="dash-section active" id="admin-overview">
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-info">
+                <h3>Total Vault Assets</h3>
+                <div class="metric-value">$142.89B</div>
+                <div class="metric-trend up">▲ 2.4% this quarter</div>
+              </div>
+              <div class="metric-icon">🏦</div>
+            </div>
+            
+            <div class="metric-card">
+              <div class="metric-info">
+                <h3>Active Corporate Entities</h3>
+                <div class="metric-value">1,489</div>
+                <div class="metric-trend up">▲ 18 new this month</div>
+              </div>
+              <div class="metric-icon">🏢</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-info">
+                <h3>Transactions Pending</h3>
+                <div class="metric-value" style="color:var(--accent);">Active</div>
+                <div class="metric-trend" style="color:var(--text-secondary);">Compliance checks pending</div>
+              </div>
+              <div class="metric-icon">📋</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-info">
+                <h3>Core Node Latency</h3>
+                <div class="metric-value">14ms</div>
+                <div class="metric-trend up" style="color:var(--accent);">✓ Stable Status</div>
+              </div>
+              <div class="metric-icon">⚡</div>
+            </div>
+          </div>
+
+          <!-- MOCK CHART PANEL -->
+          <div class="chart-card">
+            <h2>Monthly Corporate Cash Inflows (USD Billions)</h2>
+            <div class="bar-chart">
+              <div class="chart-bar-wrapper">
+                <div class="chart-bar" style="height: 120px;"><span class="chart-bar-val">$12B</span></div>
+                <span class="chart-bar-label">May</span>
+              </div>
+              <div class="chart-bar-wrapper">
+                <div class="chart-bar" style="height: 140px;"><span class="chart-bar-val">$14B</span></div>
+                <span class="chart-bar-label">Jun</span>
+              </div>
+              <div class="chart-bar-wrapper">
+                <div class="chart-bar" style="height: 110px;"><span class="chart-bar-val">$11B</span></div>
+                <span class="chart-bar-label">Jul</span>
+              </div>
+              <div class="chart-bar-wrapper">
+                <div class="chart-bar" style="height: 165px;"><span class="chart-bar-val">$16.5B</span></div>
+                <span class="chart-bar-label">Aug</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: COMPLIANCE DESK -->
+        <div class="dash-section" id="admin-approvals">
+          <div class="table-container">
+            <div class="table-header">
+              <h2>Pending Wire Approvals Desk</h2>
+              <span style="font-size:0.85rem; color:var(--primary); font-weight:600;">Compliance sign-off is required for all transfer items.</span>
+            </div>
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>TXID</th>
+                  <th>SENDER CORPORATE</th>
+                  <th>RECIPIENT ROUTING</th>
+                  <th>AMOUNT</th>
+                  <th>DATE LOGGED</th>
+                  <th>VERIFICATION ACTION</th>
+                </tr>
+              </thead>
+              <tbody id="admin-approvals-body">
+                <!-- Filled dynamically by main.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SECTION 3: CLIENT ROSTER -->
+        <div class="dash-section" id="admin-roster">
+          <div class="table-container">
+            <div class="table-header">
+              <h2>Registered Corporate Account Directory</h2>
+            </div>
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Client Name</th>
+                  <th>Company Identity</th>
+                  <th>Email ID</th>
+                  <th>Portal Scope</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Jonathan Mercer</td>
+                  <td>Nexus Holdings LTD</td>
+                  <td>mercer@nexus.com</td>
+                  <td>Corporate Admin</td>
+                  <td><span class="status-badge success">Approved</span></td>
+                </tr>
+                <tr>
+                  <td>Sarah K.</td>
+                  <td>Aero Systems Global</td>
+                  <td>kothari@aero.com</td>
+                  <td>Treasury Analyst</td>
+                  <td><span class="status-badge success">Approved</span></td>
+                </tr>
+                <tr>
+                  <td>Corporate CFO</td>
+                  <td>Nexus Holdings</td>
+                  <td>client@company.com</td>
+                  <td>General CFO</td>
+                  <td><span class="status-badge success">Approved</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SECTION 4: SYSTEM AUDITS -->
+        <div class="dash-section" id="admin-audits">
+          <div class="table-container">
+            <div class="table-header">
+              <h2>Compliance Action Logs</h2>
+            </div>
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Actor ID</th>
+                  <th>Action Triggered</th>
+                  <th>Target Record</th>
+                  <th>Audit IP</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2026-08-28 20:30:15</td>
+                  <td>admin@apex.com</td>
+                  <td>Approved Cross-Border wire</td>
+                  <td>TX8934 ($4.2M)</td>
+                  <td>192.168.12.83</td>
+                </tr>
+                <tr>
+                  <td>2026-08-28 19:44:12</td>
+                  <td>system-node</td>
+                  <td>MFA Key renewal trigger</td>
+                  <td>User: client@company.com</td>
+                  <td>10.0.4.19</td>
+                </tr>
+                <tr>
+                  <td>2026-08-28 18:22:09</td>
+                  <td>admin@apex.com</td>
+                  <td>Client Profile Approved</td>
+                  <td>Entity: Aero Systems Global</td>
+                  <td>192.168.12.83</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SECTION 5: SETTINGS -->
+        <div class="dash-section" id="admin-settings">
+          <div class="card glass" style="max-width: 600px;">
+            <h2 style="margin-bottom: 24px;">Security Threshold Configuration</h2>
+            <form onsubmit="event.preventDefault(); alert('Compliance policies updated.');">
+              <div class="form-group">
+                <label>Automatic Approval Ceiling (USD)</label>
+                <input type="number" class="form-control" value="15000000">
+                <small style="color:var(--text-muted);">Wires below this limit pass automatically unless flagged by threat AI.</small>
+              </div>
+              <div class="form-group">
+                <label>Compliance Check Threshold</label>
+                <select class="form-control" style="background-color: var(--bg-tertiary);">
+                  <option>Strict (Basel III Standard)</option>
+                  <option>Moderate (Under $50M Sweep)</option>
+                  <option>Custom Policies</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary" style="margin-top:10px;">Save Threshold Rules</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="main.js"></script>
+  <!-- Preloader Script -->
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+          preloader.classList.add('fade-out');
+        }
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
