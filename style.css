@@ -189,22 +189,18 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   width: 100%;
+  height: 80px;
   z-index: 1000;
   transition: var(--transition);
-  padding: 20px 0;
+  display: flex;
+  align-items: center;
 }
 
 .header.scrolled {
-  padding: 12px 0;
   background: rgba(7, 11, 25, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--glass-border);
-}
-
-.header.scrolled .logo-img {
-  width: 80px;
-  height: 80px;
 }
 
 .nav-wrapper {
@@ -227,8 +223,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-img {
-  width: 120px;
-  height: 120px;
+  height: 50px;
+  width: auto;
   object-fit: contain;
   border-radius: 6px;
   transition: var(--transition);
@@ -698,6 +694,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-muted);
   font-size: 0.85rem;
   margin-bottom: 12px;
+  flex-wrap: wrap;
 }
 
 .blog-card h3 {
@@ -980,8 +977,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .hero-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 32px;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
   }
 
   .hero-content h1 {
@@ -1013,10 +1014,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 2.5rem;
   }
 
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
+
 
   .calc-results {
     grid-template-columns: 1fr;
@@ -1060,14 +1058,14 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* 481px to 768px (Tablets / Large Mobile) */
-@media screen and (max-width: 768px) {
+/* --- Tablets & Mobile View (max-width: 1024px) --- */
+@media screen and (max-width: 1024px) {
   /* Navigation Mobile Responsive Menu */
   .nav-links {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
+    width: 100%;
     height: 100vh;
     background-color: var(--bg-secondary);
     border-left: 1px solid var(--glass-border);
@@ -1097,10 +1095,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 
-  .logo-img {
-    width: 80px;
-    height: 80px;
-  }
+  /* Logo image height is constant */
 
   .nav-actions {
     margin-right: 0;
@@ -1123,7 +1118,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .hero-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-image-wrapper {
+    width: 100%;
+    overflow: hidden;
+    min-width: 0;
   }
 
   .hero-content {
@@ -1163,15 +1164,103 @@ h1, h2, h3, h4, h5, h6 {
     gap: 16px;
     text-align: center;
   }
-}
 
-/* 769px to 1024px (Laptops / Small Desktop) */
-@media screen and (max-width: 1024px) {
   .container {
     padding: 0 32px;
   }
 
   .hero-content h1 {
     font-size: 3rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* --- Custom Toast Notification --- */
+#custom-toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 10000;
+  max-width: 380px;
+  width: calc(100% - 48px);
+}
+
+.custom-toast {
+  background: rgba(14, 23, 44, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--primary);
+  box-shadow: 0 4px 20px var(--primary-glow);
+  color: var(--text-primary);
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.custom-toast.success {
+  border-color: var(--accent);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
+}
+
+.custom-toast.error {
+  border-color: var(--accent-red);
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.25);
+}
+
+.toast-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.toast-message {
+  flex-grow: 1;
+}
+
+/* --- Responsive Services Elements --- */
+.hero-card-box {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+
+.hero-code-box {
+  background-color: #03060c;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: var(--primary);
+  box-shadow: var(--shadow-md);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 480px) {
+  .hero-card-box {
+    padding: 20px;
+  }
+  .hero-code-box {
+    padding: 16px;
   }
 }

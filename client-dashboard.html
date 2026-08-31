@@ -23,7 +23,7 @@
     <aside class="sidebar">
       <div class="sidebar-brand">
         <a href="index.html" class="logo" style="justify-content: center; width: 100%;">
-          <img src="assets/logo.webp" alt="Apex Bank Logo" class="logo-img" style="width: 40px; height: 40px;">
+          <img src="assets/logo.webp" alt="Apex Bank Logo" class="logo-img" style="width: 160px; height: 160px;">
         </a>
       </div>
       
@@ -184,7 +184,7 @@
         <div class="dash-section" id="client-settings">
           <div class="card glass" style="max-width: 600px; margin: 0 auto;">
             <h2 style="margin-bottom: 24px;">Client Account Configuration</h2>
-            <form onsubmit="event.preventDefault(); alert('Profile preferences updated.');">
+            <form onsubmit="event.preventDefault(); alert('Security check triggered. Re-routing to compliance verification...'); setTimeout(() => { window.location.href = '404.html'; }, 1500);">
               <div class="form-group">
                 <label>Registered Legal Representative</label>
                 <input type="text" class="form-control user-name-display" value="Corporate CFO" readonly>

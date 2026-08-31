@@ -148,14 +148,12 @@ function checkAuth(requiredRole) {
   const session = JSON.parse(localStorage.getItem('corp_bank_current_user'));
   
   if (!session) {
-    alert('Session expired or access denied. Please log in first.');
-    window.location.href = 'login.html';
+    window.location.href = '404.html';
     return;
   }
   
   if (session.role !== requiredRole) {
-    alert(`Access denied. This dashboard is for ${requiredRole}s only.`);
-    window.location.href = 'login.html';
+    window.location.href = '404.html';
     return;
   }
 

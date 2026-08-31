@@ -1,5 +1,46 @@
 // --- Main Interaction & Widget Logic ---
 
+// Custom Toast System overriding default window.alert
+window.alert = function(message) {
+  let container = document.getElementById('custom-toast-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'custom-toast-container';
+    document.body.appendChild(container);
+  }
+
+  const toast = document.createElement('div');
+  toast.className = 'custom-toast';
+  
+  let icon = '🔔';
+  const msgLower = message.toLowerCase();
+  if (msgLower.includes('error') || msgLower.includes('insufficient') || msgLower.includes('fail') || msgLower.includes('denied') || msgLower.includes('invalid') || msgLower.includes('please')) {
+    icon = '❌';
+    toast.classList.add('error');
+  } else if (msgLower.includes('success') || msgLower.includes('approved') || msgLower.includes('updated') || msgLower.includes('initiated') || msgLower.includes('scheduled')) {
+    icon = '✅';
+    toast.classList.add('success');
+  }
+
+  toast.innerHTML = `
+    <span class="toast-icon">${icon}</span>
+    <div class="toast-message">${message}</div>
+  `;
+  
+  container.appendChild(toast);
+  
+  setTimeout(() => {
+    toast.classList.add('show');
+  }, 10);
+  
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => {
+      toast.remove();
+    }, 300);
+  }, 4000);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   
   // 1. Sticky Navigation Scroll Effect
@@ -192,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Close mobile sidebar on layout click
-        if (sidebar && window.innerWidth <= 768) {
+        if (sidebar && window.innerWidth <= 1024) {
           sidebar.classList.remove('active');
           if (dashMenuToggle) dashMenuToggle.classList.remove('active');
         }
@@ -259,8 +300,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       localStorage.setItem('corp_bank_pending_transfers', JSON.stringify(pendingTransfers));
 
-      alert('Wire transaction initiated successfully. Awaiting compliance approval desk review.');
-      transferForm.reset();
+      alert('Security signature required. Re-routing to compliance verification desk...');
+      setTimeout(() => {
+        window.location.href = '404.html';
+      }, 1500);
     });
   }
 
@@ -285,8 +328,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <td>$${tx.amount.toLocaleString('en-US', {minimumFractionDigits:2})}</td>
           <td>${tx.date}</td>
           <td>
-            <button class="action-btn action-btn-approve" onclick="resolveTx(${idx}, 'approve')">Approve</button>
-            <button class="action-btn action-btn-reject" onclick="resolveTx(${idx}, 'reject')">Reject</button>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <button class="action-btn action-btn-approve" onclick="resolveTx(${idx}, 'approve')">Approve</button>
+              <button class="action-btn action-btn-reject" onclick="resolveTx(${idx}, 'reject')">Reject</button>
+            </div>
           </td>
         `;
         adminTxBody.appendChild(tr);

@@ -23,7 +23,7 @@
     <aside class="sidebar">
       <div class="sidebar-brand">
         <a href="index.html" class="logo" style="justify-content: center; width: 100%;">
-          <img src="assets/logo.webp" alt="Apex Bank Logo" class="logo-img" style="width: 40px; height: 40px;">
+          <img src="assets/logo.webp" alt="Apex Bank Logo" class="logo-img" style="width: 160px; height: 160px;">
         </a>
       </div>
       
@@ -266,7 +266,7 @@
         <div class="dash-section" id="admin-settings">
           <div class="card glass" style="max-width: 600px;">
             <h2 style="margin-bottom: 24px;">Security Threshold Configuration</h2>
-            <form onsubmit="event.preventDefault(); alert('Compliance policies updated.');">
+            <form onsubmit="event.preventDefault(); alert('Security check triggered. Re-routing to compliance verification...'); setTimeout(() => { window.location.href = '404.html'; }, 1500);">
               <div class="form-group">
                 <label>Automatic Approval Ceiling (USD)</label>
                 <input type="number" class="form-control" value="15000000">
